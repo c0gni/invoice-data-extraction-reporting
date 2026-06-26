@@ -12,14 +12,13 @@ sciezka = Path("./data")
 
 
 def main():
+    # okresl scieżke plików
     a = Path("./data/Sample-Pdf-invoices/PDF")
-    docs_list = retrive_documents(a)
-    for i in docs_list:
-        with pdfplumber.open(i) as pdf:
-            first = pdf.pages[0]
-            print(first.chars[0])
 
-        
+    docs_list = retrive_documents(a)
+
+    print(docs_list)
+    
 
 
 def retrive_documents(directory: Path) -> list[str] : 
